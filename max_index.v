@@ -17,17 +17,17 @@ module max_index (
     output reg         valid
 );
 
-    // === 用於比較的暫存器 ===
+    
     reg [15:0] current_max;
     reg [3:0]  current_idx;
     reg [3:0]  index;
 
 
 
-    // === 暫存 logit ===
+
     reg [15:0] logit_val;
 
-    // === 比較用 ===
+
     wire [15:0] a_cmp, b_cmp;
     wire ge;
 
@@ -40,7 +40,6 @@ module max_index (
         .ge(ge)
     );
 
-    // === 狀態機 ===
     localparam IDLE = 0, COMPARE = 1, DONE = 2;
     reg [1:0] state;
 
